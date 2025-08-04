@@ -17,7 +17,13 @@ public class ContactFormController {
 	@GetMapping("/form")
 	public String contactForm(Model model) {
 		System.out.println("contactFormメソッド呼ばれたよ");
-		model.addAttribute("contactForm", new ContactForm());
+//		model.addAttribute("contactForm", new ContactForm());
+		
+		//すでにインスタンスが存在する場合は行わない
+		if(!model.containsAttribute("contactForm")) {
+			//ビューにフォームクラスのインスタンスを受け渡す
+			model.addAttribute("contactForm", new ContactForm());
+		}
 		
 		return "contactFormView";
 	}
@@ -37,6 +43,7 @@ public class ContactFormController {
 			return "redirect:/form";
 		}
 		
+		redirectAttributes.addFlashAttribute("contactForm", form);
 		return "confirmView";
 	}
 

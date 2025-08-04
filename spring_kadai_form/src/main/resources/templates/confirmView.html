@@ -16,9 +16,20 @@
 			</tr>
 		</thead>
 		<tbody>
-			<td th:text="${contactForm.getName()}"></td>
-			<td th:text="${contactForm.getEmail()}"></td>
-			<td th:text="${contactForm.getMessage()}"></td>
+			<tr>
+				<th scope="row">お名前</th>
+				<td th:text="${contactForm.getName()}"></td>
+			</tr>
+			
+			<tr>
+				<th scope="row">メールアドレス</th>
+				<td th:text="${contactForm.getEmail()}"></td>
+			</tr>
+			
+			<tr>
+				<th scope="row">お問い合わせ内容</th>
+				<td th:text="${contactForm.getMessage()}"></td>
+			</tr>
 		</tbody>
 		
 	</table>

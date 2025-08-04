@@ -11,15 +11,15 @@
 	<form th:action="@{/confirm}" method="post" th:object="${contactForm}">
 		<label for="name">お名前</label>
 		<input type="text" th:field="*{name}"><br>
-		<div th:if="${#field.hasErrors('name')}" th:errors="*{name}" style="color: red;"></div>
+		<div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color: red;"></div>
 		
 		<label for="email">メールアドレス</label>
 		<input type="text" th:field="*{email}"><br>
-		<div th:if="${#field.hasErrors('email')}" th:errors="*{email}" style="color: red;"></div>
+		<div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red;"></div>
 		
 		<label for="message">お問い合わせ内容</label>
 		<textarea cols="30" rows="10" th:field="*{message}" ></textarea>
-		<div th:if="${#field.hasErrors('message')}" th:errors="*{message}" style="color: red;"></div>
+		<div th:if="${#fields.hasErrors('message')}" th:errors="*{message}" style="color: red;"></div>
 		
 		<button type="submit">送信</button>
 	</form>
